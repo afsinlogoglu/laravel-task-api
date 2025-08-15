@@ -137,14 +137,6 @@ The API uses Laravel Sanctum tokens. Put your token in the Authorization header 
 Authorization: Bearer {your-token}
 ```
 
-## Test accounts
-
-After running the seeder, you can use these accounts to test:
-
-- John Doe: john@example.com / password123
-- Jane Smith: jane@example.com / password123  
-- Mike Johnson: mike@example.com / password123
-
 ## Task statuses
 
 - pending - Task exists but hasn't started yet
