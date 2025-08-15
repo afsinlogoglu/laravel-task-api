@@ -83,31 +83,31 @@ A task management system built with Laravel 12. It handles teams, task assignmen
 
 ### User accounts
 
-| Method | Endpoint | What it does | Needs auth? |
-|--------|----------|---------------|--------------|
-| POST | `/api/register` | Create new user account | No |
-| POST | `/api/login` | Log in existing user | No |
-| GET | `/api/user` | Get current user info | Yes |
-| POST | `/api/logout` | Log out user | Yes |
+| Method | Endpoint | What it does |
+|--------|----------|---------------|
+| POST | `/api/register` | Create new user account |
+| POST | `/api/login` | Log in existing user |
+| GET | `/api/user` | Get current user info |
+| POST | `/api/logout` | Log out user |
 
 ### Teams
 
-| Method | Endpoint | What it does | Needs auth? |
-|--------|----------|---------------|--------------|
-| POST | `/api/teams` | Create a new team | Yes |
-| GET | `/api/teams` | Show user's teams | Yes |
-| POST | `/api/teams/{id}/members` | Add someone to team | Yes |
-| DELETE | `/api/teams/{id}/members/{userId}` | Remove someone from team | Yes |
+| Method | Endpoint | What it does |
+|--------|----------|---------------|
+| POST | `/api/teams` | Create a new team |
+| GET | `/api/teams` | Show user's teams |
+| POST | `/api/teams/{id}/members` | Add someone to team |
+| DELETE | `/api/teams/{id}/members/{userId}` | Remove someone from team |
 
 ### Tasks
 
-| Method | Endpoint | What it does | Needs auth? |
-|--------|----------|---------------|--------------|
-| POST | `/api/tasks` | Create a new task | Yes |
-| GET | `/api/tasks` | List tasks (with filters) | Yes |
-| PUT | `/api/tasks/{id}` | Update existing task | Yes |
-| DELETE | `/api/tasks/{id}` | Delete a task | Yes |
-| POST | `/api/tasks/{id}/files` | Upload file to task | Yes |
+| Method | Endpoint | What it does |
+|--------|----------|---------------|
+| POST | `/api/tasks` | Create a new task |
+| GET | `/api/tasks` | List tasks (with filters) |
+| PUT | `/api/tasks/{id}` | Update existing task |
+| DELETE | `/api/tasks/{id}` | Delete a task |
+| POST | `/api/tasks/{id}/files` | Upload file to task |
 
 ## How responses look
 
