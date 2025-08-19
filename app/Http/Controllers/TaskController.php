@@ -27,6 +27,7 @@ class TaskController extends Controller
         ]);
 
         if ($request->assigned_user_id) {
+            $task->load('assignedUser'); //
             event(new TaskAssigned($task, $task->assignedUser));
         }
 
