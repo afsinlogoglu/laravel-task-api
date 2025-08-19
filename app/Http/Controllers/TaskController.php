@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\TaskAssigned;
+use App\Events\TaskCompleted;
 use App\Http\Requests\TaskRequest;
 use App\Models\Task;
 use App\Models\TaskFile;
@@ -23,6 +25,10 @@ class TaskController extends Controller
             'team_id' => $request->team_id,
             'created_by' => $request->user()->id,
         ]);
+
+        if ($request->assigned_user_id) {
+            event(new TaskAssigned($task, $task->assignedUser));
+        }
 
         return response()->json([
             'success' => true,
@@ -79,7 +85,12 @@ class TaskController extends Controller
             ], 403);
         }
 
+        $oldStatus = $task->status;
         $task->update($request->validated());
+
+        if ($oldStatus !== 'completed' && $task->status === 'completed') {
+            event(new TaskCompleted($task));
+        }
 
         return response()->json([
             'success' => true,
